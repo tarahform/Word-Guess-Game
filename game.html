@@ -13,22 +13,29 @@
 </head>
 
 <body>
+    <header>
+        <h1>Hangman:</h1>
+    </header>
 
-    <div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span id="word"></span>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <h3>Wins: </h3>
                 <span id="wins"></span>
                 <h3>Losses: </h3>
                 <span id="losses"></span>
-                <h3>Ties: </h3>
-                <span id="ties"></span>
+
             </div>
             <div class="col-md-6">
                 <h3>Letters tried: </h3>
                 <span id="lettersTried"></span>
                 <h3>Attempts left: </h3>
-                <span id="attempsLeft"></span>
+                <span id="guessLeft"></span>
             </div>
         </div>
     </div>
