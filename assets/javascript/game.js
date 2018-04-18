@@ -1,3 +1,14 @@
+// define variables for HTML elements
+var wins = 0;
+var losses = 0;
+var ties = 0;
+var winsSpan = ;
+var lossesSpan = ;
+var tiesSpan = ;
+var lettersTriedSpan = ;
+var attempsLeftSpan = ;
+
+
 var wordList = [
     "Tom Haverford",
     "Ben Wyatt",
@@ -18,9 +29,9 @@ var wordList = [
     "Tammy Swanson",
     "Joan Callamezzo",
     "Perd Hapley",
-    "Li’l Sebastian"]
+    "Li’l Sebastian"];
 
-console.log(wordList.length);
+
 
 var randomNumber = Math.floor(math.random() * wordList.length)
-var word = wordList[randomNumber]
+var word = wordList[randomNumber];
