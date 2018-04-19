@@ -27,7 +27,7 @@ var wordList = [
     "Tammy Swanson",
     "Joan Callamezzo",
     "Perd Hapley",
-    "Li’l Sebastian"];
+    "Lil Sebastian"];
 
 var currentWord = document.getElementById("word");
 
@@ -36,6 +36,7 @@ var word = "";
 var blankWord = [];
 
 function startGame() {
+    lettersTriedSpan.innerText = "";
     numGuesses = 15;
     guessLeft.innerText = numGuesses;
     // randomly picks a word from the array
@@ -51,6 +52,7 @@ function startGame() {
         }
     }
     currentWord.innerText = blankWord.join('\xa0');
+    console.log(word);
 }
 startGame()
 
@@ -64,27 +66,33 @@ document.onkeyup = function (event) {
     for (var i = 0; i < word.length; i++) {
         if (playerChoice.toLowerCase() === word.charAt(i).toLowerCase()) {
             blankWord[i] = word.charAt(i);
-        } 
+        } else {
+            if (!lettersTriedSpan.innerText.toLowerCase().includes(playerChoice) && !word.toLowerCase().includes(playerChoice)) {
+                lettersTriedSpan.innerText += playerChoice + ",\xa0";
+                numGuesses -= 1;
+                guessLeft.innerText = numGuesses;
+            }
+        }
     }
     currentWord.innerText = blankWord.join("\xa0");
 
+    // lettersTriedSpan.innerText += playerChoice + ",\xa0";
 
-    // determine if player won/lost
-    lettersTriedSpan.innerText += playerChoice + ",\xa0";
-    numGuesses -= 1;
-    guessLeft.innerText = numGuesses;
+    if (blankWord.join("").replace("\xa0", " ") === word) {
+        console.log("you win")
+        wins += 1;
+        winsSpan.innerText = wins;
+        startGame()
+        // } else {
+        //     numGuesses -= 1;
+    }
+
     if (numGuesses === 0) {
         console.log("you lose");
         losses += 1;
         lossesSpan.innerText = losses;
         startGame()
-    } else {
-        console.log("you win")
-        wins += 1;
-        winsSpan.innerText = wins;
-        startGame()
     }
-
 }
 
 

@@ -8,37 +8,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <title>Hangman | By TarahDactyl</title>
 </head>
 
 <body>
-    <header>
-        <h1>Hangman:</h1>
+
+    <header class="jumbotron">
+        <h1 class="wordToBeGuessed text-center">
+            <span id="word"></span>
+        </h1>
+
     </header>
 
-    <div class="container">
-        <div class="row">
+    <div class="container" id="gamebox">
+
+        <div class="row1">
             <div class="col-md-12">
-                <span id="word"></span>
+                <h2 class="container text-center">Hangman</h2>
             </div>
         </div>
-        <div class="row">
+
+        <div class="row2">
+
             <div class="col-md-6">
                 <h3>Wins: </h3>
-                <span id="wins"></span>
+                <p>
+                    <span id="wins"></span>
+                </p>
                 <h3>Losses: </h3>
-                <span id="losses"></span>
-
+                <p>
+                    <span id="losses"></span>
+                </p>
             </div>
+
             <div class="col-md-6">
                 <h3>Letters tried: </h3>
-                <span id="lettersTried"></span>
+                <p>
+                    <span id="lettersTried"></span>
+                </p>
                 <h3>Attempts left: </h3>
-                <span id="guessLeft"></span>
+                <p>
+                    <span id="guessLeft"></span>
+                </p>
             </div>
+
         </div>
+
     </div>
+    <footer class="footer fixed-bottom">
+
+        <h2>&copy Copyright</h2>
+
+    </footer>
 
 
     <script src="./assets/javascript/game.js"></script>
